@@ -41,7 +41,7 @@ int ArrayList<T>::lastindexof(T e) {
 
 template<class T>
 int ArrayList<T>::size() {
-    return size;
+    return elements;
 }
 
 template<class T>
