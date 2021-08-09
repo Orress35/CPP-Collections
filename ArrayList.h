@@ -7,7 +7,8 @@ class ArrayList {
         void resize();
         bool needtoresize();
     public:
-        ArrayList() {
+        ArrayList()
+        {
             data = new T[5];
             arrsize = 5;
             elements = 0;
