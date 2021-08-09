@@ -1,6 +1,7 @@
 #include "Ratio.h"
 
-int gcd(int n, int n2) {
+int gcd(int n, int n2)
+{
     if (n  < 0) n  = -n;
     if (n2 < 0) n2 = -n2;
     int gcd = 0;
@@ -10,7 +11,8 @@ int gcd(int n, int n2) {
     return gcd;
 }
 
-int lcm(int n, int n2) {
+int lcm(int n, int n2)
+{
     if (n  < 0) n  = -n;
     if (n2 < 0) n2 = -n2;
     int highest = n > n2 ? n : n2;
@@ -22,11 +24,13 @@ int lcm(int n, int n2) {
     return 0;
 }
 
-double Ratio::doubleValue() {
+double Ratio::doubleValue()
+{
     return (double)dividend / (double)divisor;
 }
 
-float Ratio::floatValue() {
+float Ratio::floatValue()
+{
     return (float)dividend / (float)divisor;
 }
 
@@ -34,7 +38,8 @@ int Ratio::intValue() {
     return (int)dividend / (int)divisor;
 }
 
-Ratio Ratio::add(Ratio y) {
+Ratio Ratio::add(Ratio y)
+{
     Ratio x = simplify();
     y.simplify();
 
@@ -46,7 +51,8 @@ Ratio Ratio::add(Ratio y) {
     return x.simplify();
 }
 
-Ratio Ratio::subtract(Ratio y) {
+Ratio Ratio::subtract(Ratio y)
+{
     Ratio x = simplify();
     y.simplify();
 
@@ -58,7 +64,8 @@ Ratio Ratio::subtract(Ratio y) {
     return x.simplify();
 }
 
-Ratio Ratio::multiply(Ratio y) {
+Ratio Ratio::multiply(Ratio y)
+{
     Ratio x = simplify();
     y.simplify();
 
@@ -67,7 +74,8 @@ Ratio Ratio::multiply(Ratio y) {
     return x.simplify();
 }
 
-Ratio Ratio::divide(Ratio y) {
+Ratio Ratio::divide(Ratio y)
+{
     Ratio x = simplify();
     y.simplify();
 
@@ -76,7 +84,8 @@ Ratio Ratio::divide(Ratio y) {
     return x.simplify();
 }
 
-Ratio Ratio::simplify() {
+Ratio Ratio::simplify()
+{
     int i = gcd(dividend, divisor);
     Ratio result(dividend/i, divisor/i);
     return result;
