@@ -1,7 +1,8 @@
 #include "ArrayList.h"
 
 template<class T>
-void ArrayList<T>::resize() {
+void ArrayList<T>::resize()
+{
     T* temp = new T[arrsize + arrsize / 2];
     for (int i = 0; i < arrsize; i++)
         temp[i] = data[i];
@@ -10,12 +11,14 @@ void ArrayList<T>::resize() {
 }
 
 template<class T>
-bool ArrayList<T>::needtoresize() {
+bool ArrayList<T>::needtoresize()
+{
     return arrsize == elements;
 }
 
 template<class T>
-bool ArrayList<T>::contains(T e) {
+bool ArrayList<T>::contains(T e)
+{
     for (int i = 0; i < elements; i++)
         if (data[i] == e)
             return true;
@@ -23,7 +26,8 @@ bool ArrayList<T>::contains(T e) {
 }
 
 template<class T>
-int ArrayList<T>::indexof(T e) {
+int ArrayList<T>::indexof(T e)
+{
     for (int i = 0; i < elements; i++)
         if (data[i] == e)
             return i;
@@ -31,7 +35,8 @@ int ArrayList<T>::indexof(T e) {
 }
 
 template<class T>
-int ArrayList<T>::lastindexof(T e) {
+int ArrayList<T>::lastindexof(T e)
+{
     int indexOf = -1;
     for (int i = 0; i < elements; i++)
         if (data[i] == e)
@@ -45,17 +50,20 @@ int ArrayList<T>::size() {
 }
 
 template<class T>
-T ArrayList<T>::get(int index) {
+T ArrayList<T>::get(int index)
+{
     return data[index];
 }
 
 template<class T>
-void ArrayList<T>::set(int index, T e) {
+void ArrayList<T>::set(int index, T e)
+{
     data[index] = e;
 }
 
 template<class T>
-void ArrayList<T>::add(T e) {
+void ArrayList<T>::add(T e)
+{
     if (needtoresize())
         resize();
     data[elements] = e;
@@ -63,7 +71,8 @@ void ArrayList<T>::add(T e) {
 }
 
 template<class T>
-void ArrayList<T>::add(int index, T e) {
+void ArrayList<T>::add(int index, T e)
+{
     if (needtoresize())
         resize();
     for (int i = elements; i >= index; i--)
