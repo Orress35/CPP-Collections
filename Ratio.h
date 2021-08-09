@@ -1,6 +1,7 @@
 class Ratio {
     public:
-        Ratio(int dividend, int divisor) {
+        Ratio(int dividend, int divisor)
+        {
             this->dividend = dividend;
             this->divisor = divisor;
         }
